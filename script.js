@@ -67,7 +67,7 @@ let pipes = [];
 let pipeWidth = 80; // Độ rộng ống
 let pipeGap = 350; // Khoảng cách giữa ống trên và dưới
 let pipeDistance = 400; // Khoảng cách giữa các cặp ống
-let pipeSpeed = 4; // Tốc độ di chuyển ống
+let pipeSpeed = 7; // Tốc độ di chuyển ống
 
 // Thêm các biến đệm va chạm ở đây
 let birdCollisionPaddingX = 50; // Số pixel bỏ qua ở bên trái/phải khi kiểm tra va chạm

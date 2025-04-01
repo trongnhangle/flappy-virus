@@ -213,4 +213,18 @@ button:active {
 
 #gameOverScreen button {
     margin-top: 25px; /* Điều chỉnh margin top nút nếu cần */
-} 
+}
+
+/* --- Thêm Media Query để ẩn nút Fullscreen trên mobile --- */
+@media (max-width: 768px) { /* Áp dụng cho màn hình có chiều rộng tối đa 768px */
+    #fullscreenButton {
+        display: none; /* Ẩn nút Fullscreen */
+    }
+
+    /* (Tùy chọn) Bạn cũng có thể điều chỉnh các style khác cho mobile ở đây */
+    /* Ví dụ: Giảm kích thước font chữ hoặc padding */
+    /* h1 { font-size: 2em; } */
+    /* button { padding: 8px 15px; font-size: 0.9em; } */
+    /* #startScreen, #gameOverScreen, #charOptionsPopup { padding: 20px; } */
+}
+/* --- Kết thúc Media Query --- */ 
