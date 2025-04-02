@@ -2,6 +2,8 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
 // Lấy các phần tử UI
+const introPopup = document.getElementById('introPopup');
+const closeIntroButton = document.getElementById('closeIntroButton');
 const startScreen = document.getElementById('startScreen');
 const gameOverScreen = document.getElementById('gameOverScreen');
 const scoreDisplay = document.getElementById('scoreDisplay');
@@ -382,7 +384,10 @@ canvas.addEventListener('mousedown', birdFlap); // Click chuột để bay
 canvas.addEventListener('touchstart', birdFlap); // Chạm màn hình để bay (mobile)
 
 startButton.addEventListener('click', startGame);
-restartButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', () => {
+    gameOverScreen.style.display = 'none';
+    introPopup.style.display = 'block';
+});
 fullscreenButton.addEventListener('click', toggleFullScreen);
 
 // Thêm sự kiện cho nút "Đổi nhân vật" (thay vì nút cũ)
@@ -435,12 +440,21 @@ charFileInput.addEventListener('change', (event) => {
     event.target.value = null;
 });
 
+// --- Cập nhật Sự kiện cho Nút Đóng Intro Popup ---
+closeIntroButton.addEventListener('click', () => {
+    introPopup.style.display = 'none'; // Ẩn popup giới thiệu
+    startGame(); // <-- Gọi hàm bắt đầu/chơi lại game
+});
+
 // Khởi tạo ban đầu
 resizeCanvas(); // Đặt kích thước canvas ban đầu
 
-// Hiển thị màn hình bắt đầu và ẩn popup
-startScreen.style.display = 'block';
-charOptionsPopup.style.display = 'none'; // Đảm bảo popup ẩn khi tải
+// *** Cập nhật Trạng thái Hiển thị Ban Đầu ***
+startScreen.style.display = 'block'; // Hiện màn hình bắt đầu
+introPopup.style.display = 'none'; // Ẩn popup giới thiệu
+gameOverScreen.style.display = 'none';
+charOptionsPopup.style.display = 'none';
+scoreDisplay.style.display = 'none';
 
-// Bắt đầu vòng lặp game ngay lập tức khi tải trang
+// Bắt đầu vòng lặp game ngay lập tức khi tải trang (cho nền động)
 gameLoop(); 

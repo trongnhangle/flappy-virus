@@ -13,6 +13,15 @@
 <body>
     <canvas id="gameCanvas"></canvas>
     <div id="ui">
+        <!-- Dialog Giới thiệu (ẩn ban đầu) -->
+        <div id="introPopup" style="display: none;">
+             <h2>Cho xin 5 giây quảng cáo =)))</h2>
+             <p>Hiện tại mình có làm một app tạo caption bằng AI trên app store mà ít lượt tải quá, bà nào sài iPhone cho tui xin một download nha, thén kìu 🥰</p>
+             <p>Link ở đây: <a href="https://apps.apple.com/vn/app/gummi-chatbot-ai-caption/id6476934490" target="_blank" rel="noopener noreferrer" id="appStoreLink">Gummi: Tạo Caption Bằng AI</a></p>
+             <button id="closeIntroButton">Đóng</button>
+        </div>
+
+        <!-- Màn hình bắt đầu (hiển thị ban đầu) -->
         <div id="startScreen">
             <h1>Flappy Virus</h1>
             <img id="charPreview" src="" alt="Nhân vật hiện tại">
