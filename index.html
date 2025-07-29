@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+aaaaddd
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Virus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui">
+        <!-- Dialog Giới thiệu (ẩn ban đầu) -->
+        <div id="introPopup" style="display: none;">
+            <h2>Cho xin 5 giây quảng cáo =)))</h2>
+            <p>Hiện tại mình có làm một app tạo caption bằng AI trên app store mà ít lượt tải quá, bà nào sài iPhone cho
+                tui xin một download nha, thén kìu 🥰</p>
+            <p>Link ở đây: <a href="https://apps.apple.com/vn/app/gummi-chatbot-ai-caption/id6476934490" target="_blank"
+                    rel="noopener noreferrer" id="appStoreLink">Gummi: Tạo Caption Bằng AI</a></p>
+            <button id="closeIntroButton">Đóng</button>
+        </div>
+
+        <!-- Màn hình bắt đầu (hiển thị ban đầu) -->
+        <div id="startScreen">
+            <h1>Flappy Virus</h1>
+            <img id="charPreview" src="" alt="Nhân vật hiện tại">
+            <br>
+            <button id="startButton">Bắt đầu</button>
+            <button id="changeCharButton">Đổi nhân vật</button>
+            <input type="file" id="charFileInput" accept="image/*" style="display: none;">
+            <button id="fullscreenButton">Fullscreen</button>
+
+            <div id="charOptionsPopup">
+                <p>Chọn nguồn ảnh:</p>
+                <button id="defaultCharButton">Mặc định</button>
+                <button id="uploadCharButton">Tải lên</button>
+                <button id="cancelCharButton">Hủy</button>
+            </div>
+        </div>
+        <div id="scoreDisplay">Điểm: <span id="score">0</span></div>
+        <div id="gameOverScreen">
+            <img id="gameOverImage" src="assets/game-over.png" alt="Game Over">
+            <p id="gameOverMessage1">Em phải tin anh chứ?</p>
+            <p id="gameOverMessage2">Anh chỉ yêu mỗi <span id="finalScore">0</span> em thôi!</p>
+            <button id="restartButton">Chơi lại</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
